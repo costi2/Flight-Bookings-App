@@ -1,0 +1,14 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+
+    <persistence-unit name="unitPers">
+        <jta-data-source>AirplaneService</jta-data-source>
+        <non-jta-data-source>AirplaneServiceUnmanaged</non-jta-data-source>
+        <class>com.server.ServerSPRC.dao.Flights</class>
+        <class>com.server.ServerSPRC.dao.FlightBookings</class>
+        <class>com.server.ServerSPRC.dao.BookedTickets</class>
+        <class>com.server.ServerSPRC.dao.BoughtTickets</class>
+        <properties>
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
+        </properties>
+    </persistence-unit>
+</persistence>
